@@ -15,23 +15,23 @@ minikube start
 2. Install ArgoCD
 Bash
 # Create the namespace
-kubectl create namespace argocd
+```kubectl create namespace argocd```
 
 # Apply the official manifests
-kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)
+```kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)```
 
 3. Expose the API Server
 Open a new terminal tab and run this to access the UI:
 
 Bash
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+```kubectl port-forward svc/argocd-server -n argocd 8080:443```
 
 🔐 Phase 2: Authentication
 1. Get Admin Credentials
 The default username is admin. To get the auto-generated password, run:
 
 Bash
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo```
 
 2. Login to UI
 Go to https://localhost:8080 and use the credentials above.
