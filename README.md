@@ -107,5 +107,5 @@ Watch: In less than 3 minutes (or immediately if you click 'Refresh' in Argo UI)
 To delete everything and start over:
 
 Bash
-minikube delete
+``minikube delete```
 Lab maintained by djkaz
